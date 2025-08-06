@@ -2,7 +2,6 @@ package me.notepad.view
 
 import android.app.AlertDialog
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -50,20 +49,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        /**
-         * bottom bar android colore nero
-         */
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // Per Android 11 (API 30) e superiori
-            val window = window
-
-            window.navigationBarColor =
-                Color.Black.toArgb()  // Imposta il colore della barra di navigazione a nero
-        } else {
-            // Per Android 10 (API 29) e inferiori
-            window.navigationBarColor =
-                Color.Black.toArgb()  // Imposta il colore della barra di navigazione a nero
-        }
+        window.navigationBarColor =
+            Color.Black.toArgb()
 
         val sqlController: SqlController =
             ViewModelProvider(this)[SqlController::class.java]  // evita di ricreare l'istanza
@@ -73,7 +60,7 @@ class MainActivity : ComponentActivity() {
                     /**
                      * diventa una sorta di callback che rimane in attesa del click su una nota
                      */
-                    val intent: Intent = Intent(this, NoteActivity::class.java)
+                    val intent = Intent(this, NoteActivity::class.java)
                     intent.putExtra("title", title)
                     intent.putExtra("content", content)
                     startActivity(intent)
