@@ -90,6 +90,8 @@ class MainActivity : ComponentActivity() {
                                 sqlController.deleteNote(title = title)
                             } catch (_: Exception) {
 
+
+
                             }
 
                         }

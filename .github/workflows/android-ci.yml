@@ -1,0 +1,16 @@
+name: Android CI   #nome workflow
+
+on: [push]   # "Quando" c'è un push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Esegue su una ubunto virtuale (GitHub)
+    steps:
+      - uses: actions/checkout@v4 #Clona il codice nel runner
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin   # Installazione Java 17
+          java-version: 17
+      - name: Build
+        run: ./gradlew assembleDebug   #Chiama lo script di root
