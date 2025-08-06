@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/mpm_icon"
         android:label="Notepad"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        tools:targetApi="31">
+        android:supportsRtl="true">
         <activity android:name=".view.MainActivity"/>
         <activity android:name=".view.NoteActivity" />
 
